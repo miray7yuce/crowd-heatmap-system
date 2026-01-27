@@ -1,0 +1,7 @@
+
+*.css linguist-vendored
+*.razor linguist-vendored
+*.html linguist-vendored
+
+
+wwwroot/* linguist-vendored
