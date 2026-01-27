@@ -1,0 +1,17 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    padding: 20px;
+}
+
+.videos {
+    display: flex;
+    gap: 20px;
+}
+
+video {
+    width: 400px;
+    border: 1px solid #ccc;
+}

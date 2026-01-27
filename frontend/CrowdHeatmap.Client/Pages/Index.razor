@@ -1,0 +1,65 @@
+@page "/"
+@inject VideoService VideoService
+
+<h3>Upload Crowd Video</h3>
+
+<InputFile OnChange="UploadVideo" />
+
+@if (isLoading)
+{
+    <p>Uploading and processing video...</p>
+}
+
+@if (originalUrl != null)
+{
+    <div class="videos">
+        <div>
+            <h4>Original</h4>
+            <video src="@originalUrl" controls></video>
+        </div>
+
+        <div>
+            <h4>Heatmap</h4>
+            <video src="@heatmapUrl" controls></video>
+        </div>
+    </div>
+}
+
+@if (errorMessage != null)
+{
+    <p style="color:red">@errorMessage</p>
+}
+
+@code {
+    string? originalUrl;
+    string? heatmapUrl;
+    string? errorMessage;
+    bool isLoading = false;
+
+    // Backend base URL
+    const string BackendBaseUrl = "http://localhost:8000";
+
+    async Task UploadVideo(InputFileChangeEventArgs e)
+    {
+        errorMessage = null;
+        isLoading = true;
+
+        try
+        {
+            var file = e.File;
+            var result = await VideoService.UploadVideo(file);
+
+            // 🔴 KRİTİK DÜZELTME
+            originalUrl = $"{BackendBaseUrl}{result.original}";
+            heatmapUrl  = $"{BackendBaseUrl}{result.heatmap}";
+        }
+        catch (Exception ex)
+        {
+            errorMessage = ex.Message;
+        }
+        finally
+        {
+            isLoading = false;
+        }
+    }
+}
