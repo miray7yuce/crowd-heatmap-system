@@ -1,5 +1,3 @@
-# backend/app/services/heatmap.py
-
 import cv2
 import numpy as np
 

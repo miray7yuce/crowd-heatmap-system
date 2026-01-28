@@ -1,5 +1,3 @@
-# backend/app/utils/video_utils.py
-
 import cv2
 
 
@@ -10,7 +8,7 @@ def get_video_writer(path, width, height, fps):
     MP4 encoding FFmpeg'e bırakılır
     """
 
-    # AVI için stabil codec
+    # AVI stabil codec
     fourcc = cv2.VideoWriter_fourcc(*"XVID")
 
     writer = cv2.VideoWriter(

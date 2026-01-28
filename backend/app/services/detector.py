@@ -1,5 +1,3 @@
-# backend/app/services/detector.py
-
 import numpy as np
 from ultralytics import YOLO
 
@@ -13,11 +11,8 @@ class PersonDetector:
     """
 
     def __init__(self):
-        # DO NOT use local .pt path (prevents EOFError / broken file issues)
-        # Ultralytics will download and cache the model safely
         self.model = YOLO("yolov8n.pt")
 
-        # Fuse layers for faster inference (safe after load)
         self.model.fuse()
 
     def detect(self, frame: np.ndarray):

@@ -49,7 +49,7 @@
             var file = e.File;
             var result = await VideoService.UploadVideo(file);
 
-            // 🔴 KRİTİK DÜZELTME
+            
             originalUrl = $"{BackendBaseUrl}{result.original}";
             heatmapUrl  = $"{BackendBaseUrl}{result.heatmap}";
         }

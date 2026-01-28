@@ -1074,10 +1074,10 @@ C:\Users\miray\Desktop\crowd-heatmap-system\frontend\CrowdHeatmap.Client\obj\Deb
 C:\Users\miray\Desktop\crowd-heatmap-system\frontend\CrowdHeatmap.Client\obj\Debug\net9.0\ref\CrowdHeatmap.Client.dll
 C:\Users\miray\Desktop\crowd-heatmap-system\frontend\CrowdHeatmap.Client\obj\Debug\net9.0\compressed\c1frcp59p6-6xr1zadgoj.gz
 C:\Users\miray\Desktop\crowd-heatmap-system\frontend\CrowdHeatmap.Client\obj\Debug\net9.0\compressed\dwgy6meifv-6xr1zadgoj.gz
-C:\Users\miray\Desktop\crowd-heatmap-system\frontend\CrowdHeatmap.Client\bin\Debug\net9.0\wwwroot\_framework\CrowdHeatmap.Client.2gnvtnbn7e.wasm
-C:\Users\miray\Desktop\crowd-heatmap-system\frontend\CrowdHeatmap.Client\bin\Debug\net9.0\wwwroot\_framework\CrowdHeatmap.Client.0udncv1tui.pdb
-C:\Users\miray\Desktop\crowd-heatmap-system\frontend\CrowdHeatmap.Client\bin\Debug\net9.0\wwwroot\_framework\CrowdHeatmap.Client.2gnvtnbn7e.wasm.gz
-C:\Users\miray\Desktop\crowd-heatmap-system\frontend\CrowdHeatmap.Client\bin\Debug\net9.0\wwwroot\_framework\CrowdHeatmap.Client.0udncv1tui.pdb.gz
-C:\Users\miray\Desktop\crowd-heatmap-system\frontend\CrowdHeatmap.Client\obj\Debug\net9.0\compressed\dlq42fzw57-2gnvtnbn7e.gz
-C:\Users\miray\Desktop\crowd-heatmap-system\frontend\CrowdHeatmap.Client\obj\Debug\net9.0\compressed\kdsx25b3fw-0udncv1tui.gz
-C:\Users\miray\Desktop\crowd-heatmap-system\frontend\CrowdHeatmap.Client\obj\Debug\net9.0\compressed\btetjl5udr-4guyhcw57r.gz
+C:\Users\miray\Desktop\crowd-heatmap-system\frontend\CrowdHeatmap.Client\bin\Debug\net9.0\wwwroot\_framework\CrowdHeatmap.Client.f5zos73w9r.wasm
+C:\Users\miray\Desktop\crowd-heatmap-system\frontend\CrowdHeatmap.Client\bin\Debug\net9.0\wwwroot\_framework\CrowdHeatmap.Client.f67oeers0v.pdb
+C:\Users\miray\Desktop\crowd-heatmap-system\frontend\CrowdHeatmap.Client\bin\Debug\net9.0\wwwroot\_framework\CrowdHeatmap.Client.f5zos73w9r.wasm.gz
+C:\Users\miray\Desktop\crowd-heatmap-system\frontend\CrowdHeatmap.Client\bin\Debug\net9.0\wwwroot\_framework\CrowdHeatmap.Client.f67oeers0v.pdb.gz
+C:\Users\miray\Desktop\crowd-heatmap-system\frontend\CrowdHeatmap.Client\obj\Debug\net9.0\compressed\dlq42fzw57-f5zos73w9r.gz
+C:\Users\miray\Desktop\crowd-heatmap-system\frontend\CrowdHeatmap.Client\obj\Debug\net9.0\compressed\kdsx25b3fw-f67oeers0v.gz
+C:\Users\miray\Desktop\crowd-heatmap-system\frontend\CrowdHeatmap.Client\obj\Debug\net9.0\compressed\btetjl5udr-2tl7un9ywu.gz

@@ -1,5 +1,3 @@
-# backend/app/api/video_routes.py
-
 import uuid
 import subprocess
 from fastapi import APIRouter, UploadFile, File
@@ -20,10 +18,10 @@ async def upload_video(file: UploadFile = File(...)):
 
     input_path = UPLOAD_DIR / f"{video_id}_{file.filename}"
 
-    # 1️⃣ Geçici AVI
+    # Geçici AVI
     temp_avi_path = OUTPUT_DIR / f"{video_id}_heatmap.avi"
 
-    # 2️⃣ Son MP4 (browser-friendly)
+    # Son MP4 
     output_mp4_path = OUTPUT_DIR / f"{video_id}_heatmap.mp4"
 
     # Save uploaded file
@@ -52,7 +50,6 @@ async def upload_video(file: UploadFile = File(...)):
         stderr=subprocess.DEVNULL
     )
 
-    # İstersen geçici AVI'yi sil
     temp_avi_path.unlink(missing_ok=True)
 
     return JSONResponse({

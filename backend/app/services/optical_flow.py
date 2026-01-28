@@ -1,5 +1,3 @@
-# backend/app/services/optical_flow.py
-
 import cv2
 import numpy as np
 

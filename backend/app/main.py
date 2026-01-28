@@ -10,7 +10,7 @@ app = FastAPI(
     version="1.0.0"
 )
 
-# ✅ CORS — BLazor için DOĞRU konfigürasyon
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[

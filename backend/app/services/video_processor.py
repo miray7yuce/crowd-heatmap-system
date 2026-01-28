@@ -1,5 +1,3 @@
-# backend/app/services/video_processor.py
-
 import cv2
 
 from app.services.detector import PersonDetector
@@ -17,7 +15,6 @@ def process_video(input_video_path: str, output_video_path: str):
 
     detector = PersonDetector()
 
-    # ✅ FPS'i input videodan oku
     fps = cap.get(cv2.CAP_PROP_FPS)
     if fps is None or fps <= 0:
         fps = 25
