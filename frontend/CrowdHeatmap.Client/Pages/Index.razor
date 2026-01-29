@@ -1,34 +1,57 @@
 @page "/"
 @inject VideoService VideoService
 
-<h3>Upload Crowd Video</h3>
+<div class="page">
 
-<InputFile OnChange="UploadVideo" />
+    <header class="header">
+        <h1>Crowd Density Analysis</h1>
+        <p>
+            Upload a crowd surveillance video to analyze density patterns and generate
+            a heatmap-based visualization using computer vision techniques.
+        </p>
+    </header>
 
-@if (isLoading)
-{
-    <p>Uploading and processing video...</p>
-}
+    <section class="card upload-card">
+        <h3>Video Upload</h3>
+        <p class="hint">
+            Supported formats: MP4, AVI. Processing time depends on video length.
+        </p>
 
-@if (originalUrl != null)
-{
-    <div class="videos">
-        <div>
-            <h4>Original</h4>
-            <video src="@originalUrl" controls></video>
+        <div class="upload-area">
+            <InputFile OnChange="UploadVideo" />
         </div>
 
-        <div>
-            <h4>Heatmap</h4>
-            <video src="@heatmapUrl" controls></video>
-        </div>
-    </div>
-}
+        @if (isLoading)
+        {
+            <div class="status loading">
+                ⏳ Uploading and processing video...
+            </div>
+        }
 
-@if (errorMessage != null)
-{
-    <p style="color:red">@errorMessage</p>
-}
+        @if (errorMessage != null)
+        {
+            <div class="status error">
+                ⚠️ @errorMessage
+            </div>
+        }
+    </section>
+
+    @if (originalUrl != null)
+    {
+        <section class="results">
+            <div class="card video-card">
+                <h4>Original Video</h4>
+                <video src="@originalUrl" controls></video>
+            </div>
+
+            <div class="card video-card">
+                <h4>Heatmap Output</h4>
+                <video src="@heatmapUrl" controls></video>
+            </div>
+        </section>
+    }
+
+</div>
 
 @code {
     string? originalUrl;
@@ -36,7 +59,6 @@
     string? errorMessage;
     bool isLoading = false;
 
-    // Backend base URL
     const string BackendBaseUrl = "http://localhost:8000";
 
     async Task UploadVideo(InputFileChangeEventArgs e)
@@ -49,7 +71,6 @@
             var file = e.File;
             var result = await VideoService.UploadVideo(file);
 
-            
             originalUrl = $"{BackendBaseUrl}{result.original}";
             heatmapUrl  = $"{BackendBaseUrl}{result.heatmap}";
         }

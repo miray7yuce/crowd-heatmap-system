@@ -1,23 +1,24 @@
+# app/services/heatmap.py
+
 import cv2
 import numpy as np
+from app.core.config import COLORMAP
 
-from app.core.config import HEATMAP_ALPHA, COLORMAP
 
+def density_to_heatmap(density: np.ndarray) -> np.ndarray:
+    """
+    Density map -> BGR heatmap image
+    """
+    if density.max() <= 0:
+        h, w = density.shape
+        return np.zeros((h, w, 3), dtype=np.uint8)
 
-def overlay_heatmap(frame, density_map):
-    heatmap = np.uint8(255 * density_map)
+    norm = density / (density.max() + 1e-6)
+    heat = (norm * 255).astype(np.uint8)
 
     if COLORMAP == "JET":
-        heatmap = cv2.applyColorMap(heatmap, cv2.COLORMAP_JET)
+        heat = cv2.applyColorMap(heat, cv2.COLORMAP_JET)
     else:
-        heatmap = cv2.applyColorMap(heatmap, cv2.COLORMAP_HOT)
+        heat = cv2.applyColorMap(heat, cv2.COLORMAP_HOT)
 
-    overlay = cv2.addWeighted(
-        frame,
-        1 - HEATMAP_ALPHA,
-        heatmap,
-        HEATMAP_ALPHA,
-        0
-    )
-
-    return overlay
+    return heat

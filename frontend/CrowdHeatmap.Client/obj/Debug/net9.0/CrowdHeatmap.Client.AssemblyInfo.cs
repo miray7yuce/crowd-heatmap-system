@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CrowdHeatmap.Client")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+04d2f5a7625996849c35a8357e0a0978521ce577")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f9196742d965655e23ab856f4de3655ea2249a45")]
 [assembly: System.Reflection.AssemblyProductAttribute("CrowdHeatmap.Client")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CrowdHeatmap.Client")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

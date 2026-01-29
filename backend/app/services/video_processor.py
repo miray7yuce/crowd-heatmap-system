@@ -1,56 +1,60 @@
+# app/services/video_processor.py
+
 import cv2
+import numpy as np
 
 from app.services.detector import PersonDetector
 from app.services.density import generate_density_map
-from app.services.heatmap import overlay_heatmap
-from app.core.config import EMA_ALPHA
+from app.services.heatmap import density_to_heatmap
 from app.utils.video_utils import get_video_writer
+
+
+DECAY = 0.97
+ACCUM_GAIN = 1.0
 
 
 def process_video(input_video_path: str, output_video_path: str):
     cap = cv2.VideoCapture(input_video_path)
-
     if not cap.isOpened():
         raise RuntimeError("Input video could not be opened")
 
     detector = PersonDetector()
-
-    fps = cap.get(cv2.CAP_PROP_FPS)
-    if fps is None or fps <= 0:
-        fps = 25
+    fps = cap.get(cv2.CAP_PROP_FPS) or 25
 
     writer = None
-    prev_density = None
+    accumulated_density = None
 
     while True:
         ret, frame = cap.read()
         if not ret:
             break
 
+        # İnsan noktaları
         points = detector.detect(frame)
-        density = generate_density_map(points, frame.shape)
 
-        # Temporal smoothing (EMA)
-        if prev_density is None:
-            smooth_density = density
+        # Anlık density
+        current_density = generate_density_map(points, frame.shape)
+
+        # Zamansal birikme
+        if accumulated_density is None:
+            accumulated_density = current_density.copy()
         else:
-            smooth_density = (
-                EMA_ALPHA * density + (1 - EMA_ALPHA) * prev_density
-            )
+            accumulated_density *= DECAY
+            accumulated_density += ACCUM_GAIN * current_density
 
-        prev_density = smooth_density
-
-        output_frame = overlay_heatmap(frame, smooth_density)
+        # SADECE HEATMAP FRAME
+        heatmap_frame = density_to_heatmap(accumulated_density)
 
         if writer is None:
+            h, w = heatmap_frame.shape[:2]
             writer = get_video_writer(
                 output_video_path,
-                frame.shape[1],
-                frame.shape[0],
+                w,
+                h,
                 fps
             )
 
-        writer.write(output_frame)
+        writer.write(heatmap_frame)
 
     cap.release()
     if writer:

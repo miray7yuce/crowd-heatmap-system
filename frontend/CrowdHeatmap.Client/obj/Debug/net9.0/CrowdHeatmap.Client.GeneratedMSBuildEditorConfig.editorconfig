@@ -28,10 +28,6 @@ build_property.EnableCodeStyleSeverity =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/miray/Desktop/crowd-heatmap-system/frontend/CrowdHeatmap.Client/Pages/Index.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/miray/Desktop/crowd-heatmap-system/frontend/CrowdHeatmap.Client/Shared/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
@@ -43,3 +39,7 @@ build_metadata.AdditionalFiles.CssScope =
 [C:/Users/miray/Desktop/crowd-heatmap-system/frontend/CrowdHeatmap.Client/Layout/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE1haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-t5mjm178tq
+
+[C:/Users/miray/Desktop/crowd-heatmap-system/frontend/CrowdHeatmap.Client/Pages/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-zzvdqh8s5s
